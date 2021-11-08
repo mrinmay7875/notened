@@ -1,8 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 function Header() {
     return (
         <div>
+            <Head>
+                <title>Next Mongodb App</title>
+                <meta
+                    name="viewport"
+                    content="initial-scale=1.0, width=device-width"
+                />
+            </Head>
             <header className="flex flex-row flex-wrap justify-around items-center bg-gray-900 ">
                 <Link href="/">
                     <a className="text-2xl font-bold text-white ">Home</a>

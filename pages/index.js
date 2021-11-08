@@ -29,12 +29,13 @@ export default function Home() {
                     >
                         App
                     </h1>
-                    <Link href="feed" passHref={true}>
+                    <Link href="/feed" passHref={true}>
                         <button className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 my-20 ">
                             Go to Feed
                         </button>
                     </Link>
                 </div>
+
                 <Footer />
             </main>
         </div>
