@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const PostSchema = new mongoose.Schema({
     post_id: {
-        type: Number,
+        type: String,
         required: true,
         unique: [true, 'Post ID must be specifed']
     },
