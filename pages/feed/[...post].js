@@ -7,20 +7,33 @@ import PostComponent from '../../components/PostComponent';
 import Image from 'next/image';
 import Loader from 'react-loader-spinner';
 
-function Post() {
+async function Post() {
     let [id, setId] = useState();
-    // let [post, setPost] = useState();
-    const router = useRouter();
-    // let post;
-    useEffect(() => {
-        if (router.isReady) {
-            setId(router.query.post[1]);
+    let [post, setPost] = useState([
+        {
+            id: '6',
+            username: 'nleatham5',
+            content:
+                'nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida',
+            avatar: 'https://robohash.org/doloresevenietdelectus.png?size=50x50&set=set1'
         }
-    }, [router.isReady]);
+    ]);
+    // const router = useRouter();
+    // // let post;
+    // useEffect(() => {
+    //     if (router.isReady) {
+    //         setId(router.query.post[1]);
+    //     }
+    // }, [router.isReady]);
 
-    let post = Posts.filter((item) => item.id == id)[0];
-    console.log(post);
+    // Make the db call here to fetch the Posts from database
 
+    // let a = await fetch('http://localhost:3000/api/fetchpostbyid');
+    // let b = await a.json();
+    // console.log('Hi There!');
+    // console.log(b.Posts[0].username);
+    // console.log(b.Posts[0].avatar);
+    // setPost(b.Posts[0]);
     if (post) {
         return (
             <>
@@ -34,7 +47,7 @@ function Post() {
                         <div>
                             <span className="mt-20 ml-2">
                                 <Image
-                                    src={post.avatar}
+                                    src={post[0].avatar}
                                     alt="avatar"
                                     height="40"
                                     width="50"
@@ -42,12 +55,12 @@ function Post() {
                                 />
                             </span>
                             <span className="relative bottom-6 ml-2">
-                                {post.username}
+                                {post[0].username}
                             </span>
                             {/* <span className="relative right-22 ">mrinmay</span> */}
                             {/* <span className="relative bottom-4 ml-2">mrinmay</span> */}
                         </div>
-                        <p className="px-2.5 py-3">{post.content}</p>
+                        <p className="px-2.5 py-3">{post[0].content}</p>
 
                         <div className="ml-5 text-gray-600">6 hours ago</div>
                     </div>
@@ -62,7 +75,7 @@ function Post() {
 
                 {/* <Loader type="Circles" color="#00BFFF" height={80} width={80} /> */}
                 <h1 className="bg-black text-white text-2xl">
-                    {/* Sorry could not find posts */}
+                    Sorry could not find posts
                 </h1>
                 <div className="bg-black h-screen"></div>
                 <Footer />

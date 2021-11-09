@@ -5,7 +5,6 @@ import Post from '../../components/PostComponent';
 import Link from 'next/link';
 // import posts from '../../data/posts.json';
 import Loader from 'react-loader-spinner';
-// import dbConnect from '../../db/mongodb';
 import { server } from '../../config/index';
 
 export async function getServerSideProps() {

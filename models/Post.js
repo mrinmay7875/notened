@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const PostSchema = new mongoose.Schema({
-    id: String,
+    post_id: Number,
     username: String,
     content: String,
     avatar: String
