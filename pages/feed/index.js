@@ -36,7 +36,7 @@ function index({ posts }) {
                     </Link>
                 </h4>
 
-                <div className="bg-black   pt-5 pb-20 text-white ">
+                <div className="bg-black pt-5 pb-20 text-white ">
                     {posts.map((post) => (
                         <Post
                             key={post.post_id}
