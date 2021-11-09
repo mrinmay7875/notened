@@ -2,7 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 export async function getServerSideProps(context) {
-    console.log(context.query.post[0]);
+    // console.log(context.query.post[0]);
+    console.log(context.query);
 
     // function to send POST request to server
     const res = await fetch('http://localhost:3000/api/fetchpostbyusername', {
@@ -19,8 +20,8 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
-            username: data.Post[0].username,
-            content: data.Post[0].content
+            // username: data.Post[0].username,
+            // content: data.Post[0].content
         }
     };
 }
@@ -36,7 +37,7 @@ function Post({ username, content }) {
             <div>The page content is </div>
             <br />
             <hr />
-            <h4> {content}</h4>
+            {/* <h4> {content}</h4> */}
         </>
     );
 }

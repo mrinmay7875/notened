@@ -20,6 +20,7 @@ export async function getServerSideProps() {
 
 function index({ posts }) {
     if (posts) {
+        // console.log(posts);
         return (
             <div>
                 <Header />
@@ -34,13 +35,12 @@ function index({ posts }) {
                         </a>
                     </Link>
                 </h4>
-                {/* Here we render the posts */}
 
                 <div className="bg-black   pt-5 pb-20 text-white ">
                     {posts.map((post) => (
                         <Post
-                            key={post.id}
-                            id={post.id}
+                            key={post.post_id}
+                            id={post.post_id}
                             username={post.username}
                             content={post.content}
                             avatar={post.avatar}
