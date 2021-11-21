@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-function Post({ id, username, content, avatar }) {
+function Post({ id, username, content, avatar,created_at }) {
     return (
         <Link href={`/feed/posts/${id}`} passHref={true}>
             <div className="rounded border-1 border-gray-500 bg-black text-white mx-20 mb-10 lg:mx-30 p-4 hover:bg-gray-900 cursor-pointer ">
@@ -21,7 +21,7 @@ function Post({ id, username, content, avatar }) {
                 </div>
                 <p className="px-2.5 py-3">{content.substring(0, 40)}</p>
 
-                <div className="ml-5 text-gray-600">6 hours ago</div>
+                <div className="ml-5 text-gray-600">Posted at {created_at}</div>
             </div>
         </Link>
     );

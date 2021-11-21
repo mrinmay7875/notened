@@ -4,9 +4,14 @@ import Footer from '../../components/Footer';
 import { server } from '../../config/index';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {useSession} from 'next-auth/client';
+
 
 function Newpost() {
+    const [session, loading] =  useSession();
     async function submitPost() {
+
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         let newPost = document.getElementById('newpost_field').value;
         let response = await fetch(`${server}api/createpost`, {
             method: 'POST',
@@ -14,7 +19,9 @@ function Newpost() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                newPost
+                newPost,
+                user: session.user.name,
+                avatar: session.user.image ? session.user.image : 'https://robohash.org/esseharumomnis.png?size=50x50&set=set1'
             })
         });
 
