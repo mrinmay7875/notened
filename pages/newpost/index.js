@@ -38,7 +38,6 @@ function Newpost() {
             });
         }
 
-        // console.log(error);
     }
 
     return (

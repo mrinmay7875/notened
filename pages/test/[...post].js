@@ -20,14 +20,12 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
-            // username: data.Post[0].username,
-            // content: data.Post[0].content
+           
         }
     };
 }
 
 function Post({ username, content }) {
-    // console.log(router.query);
 
     return (
         <>
