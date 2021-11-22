@@ -2,14 +2,19 @@ import dbConnect from '../../db/mongodb';
 import Post from '../../models/Post';
 import { nanoid } from 'nanoid';
 
+
+
 export default async function handler(req, res) {
     await dbConnect();
     let newPostContent = req.body.newPost;
+    let user = req.body.user;
+    let avatar = req.body.avatar;
     let newPost = new Post({
         post_id: nanoid(),
         content: newPostContent,
-        username: 'Dolly',
-        avatar: 'https://robohash.org/atqueevenieteos.png?size=50x50&set=set1'
+        username: user,
+        avatar: avatar,
+        created_at:new Date().toLocaleString()
     });
 
     await newPost.save(function handler(err, response) {

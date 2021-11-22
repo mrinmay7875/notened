@@ -1,7 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import { signIn, signOut, useSession } from "next-auth/client"
+
 function Header() {
+
+    const [session, loading] = useSession()
+console.log(session)
+console.log(loading)
     return (
         <div>
             <Head>
@@ -17,16 +23,32 @@ function Header() {
                 </Link>
 
                 <div className="flex flex-row flex-wrap justify-evenly items-center bg-gray-900 my-3  ">
+
+{!session && 
+
                     <Link href="/login" passHref={true}>
-                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 ">
+                        {/* <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 ">
                             Login
-                        </button>
+                        </button> */}
+                    
+
+                        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 " onClick={() => signIn()}>Login</button>
                     </Link>
-                    <Link href="/signup" passHref={true}>
+                }
+
+                    {/* <Link href="/signup" passHref={true}>
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mx-5">
                             SignUp
                         </button>
+                    </Link> */}
+
+{session && 
+                    <Link href="/" passHref={true}>
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mx-5" onClick={() => signOut()}>
+                            Logout
+                        </button>
                     </Link>
+}
                 </div>
             </header>
         </div>
