@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/client";
+import {server} from "../config/index"
 
 function Header() {
   const [session, loading] = useSession();
-  console.log(session);
-  console.log(loading);
+
   return (
     <div>
       <Head>
@@ -31,7 +31,7 @@ function Header() {
           {session && (
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mx-5"
-              onClick={() => signOut()}
+              onClick={() => signOut({ callbackUrl: server })}
             >
               Logout
             </button>
