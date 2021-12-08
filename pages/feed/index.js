@@ -4,7 +4,6 @@ import Footer from "../../components/Footer";
 import Post from "../../components/PostComponent";
 import Link from "next/link";
 // import posts from '../../data/posts.json';
-import Loader from "react-loader-spinner";
 import { server } from "../../config/index";
 import { useSession, signIn } from "next-auth/client";
 
@@ -89,13 +88,7 @@ To create a  new post click here 👉
     return (
       <>
         <Header />
-        {/* <Loader
-                    type="Puff"
-                    color="#00BFFF"
-                    height={500}
-                    width={500}
-                    timeout={3000} //3 secs
-                /> */}
+      
         <Footer />
       </>
     );

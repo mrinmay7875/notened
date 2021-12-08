@@ -1,9 +1,16 @@
 import Link from "next/link";
 import Head from "next/head";
-// import Image from 'next/image';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useSession } from "next-auth/client";
+import BeatLoader from "react-spinners/BeatLoader";
+import { css } from "@emotion/react";
+
+const override = css`
+  display: block;
+  margin-top: 40px;
+  border-color: red;
+`;
 
 export default function Home() {
   const [session, loading] = useSession();
@@ -17,7 +24,6 @@ export default function Home() {
 
       <main>
         <Header />
-        {/* This is the homepage */}
         <div className="flex flex-col justify-center items-center text-white bg-black h-full py-10">
           <h1 className="text-8xl font-bold ">Next.js</h1>
           <h1 className="text-8xl font-bold">Mongodb</h1>
@@ -28,16 +34,16 @@ export default function Home() {
           >
             App
           </h1>
-          {loading  && <h2>Please wait.......</h2>}
-          {session  && <div>
+          {loading  && <BeatLoader className="mt-10" size={30} color={"#123abc"} css={override} loading={loading} />}
+          {!loading && session  && <div>
               <h2 className="text-4xl mt-10">You are logged in as {session.user.name} </h2>
-              {/* <h2>Email adress is {session.user.email} </h2> */}
               
 
               </div>
               }
 
-          {!session && <h2 className="text-4xl mt-10">You are not logged in!</h2>}
+          {!loading && !session && <h2 className="text-4xl mt-10">You are not logged in!</h2>}
+
 
           <Link href="/feed" passHref={true}>
             <button className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 my-20 ">
