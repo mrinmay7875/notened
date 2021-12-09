@@ -7,11 +7,12 @@ import Link from "next/link";
 import { server } from "../../config/index";
 import { useSession, signIn } from "next-auth/client";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let a = await fetch(`${server}api/fetchallposts`);
   let b = await a.json();
 
   return {
+    revalidate: 1,
     props: {
       posts: b.Posts,
     },
