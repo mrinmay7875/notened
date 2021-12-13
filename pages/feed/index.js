@@ -7,6 +7,9 @@ import Link from "next/link";
 import { server } from "../../config/index";
 import { useSession, signIn } from "next-auth/client";
 
+
+
+
 export async function getStaticProps() {
   let a = await fetch(`${server}api/fetchallposts`);
   let b = await a.json();
@@ -20,6 +23,8 @@ export async function getStaticProps() {
 }
 
 function index({ posts }) {
+
+
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [session, loading] = useSession();
 
@@ -61,7 +66,8 @@ To create a  new post click here 👉
               username={post.username}
               content={post.content}
               avatar={post.avatar}
-              created_at={post.created_at}
+              created_at={(new Date(post.created_at)).toLocaleString()}
+
             />
           ))}
         </div>

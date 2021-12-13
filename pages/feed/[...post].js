@@ -53,7 +53,7 @@ function Post(props) {
                             </div>
                         <p className="px-2.5 py-3"> {content}</p>
 
-                        <div className="ml-5 text-gray-600">                <div className="ml-5 text-gray-600">Posted at {created_at}</div>
+                        <div className="ml-5 text-gray-600">                <div className="ml-5 text-gray-600">Posted at {new Date(created_at).toLocaleString()}</div>
 </div>
                     </div>
 

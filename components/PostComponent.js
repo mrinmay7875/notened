@@ -19,7 +19,7 @@ function Post({ id, username, content, avatar,created_at }) {
                     {/* <span className="relative right-22 ">mrinmay</span> */}
                     {/* <span className="relative bottom-4 ml-2">mrinmay</span> */}
                 </div>
-                <p className="px-2.5 py-3">{content.substring(0, 40)}</p>
+                <p className="px-2.5 py-3">{`${content.substring(0, 60)}...`}</p>
 
                 <div className="ml-5 text-gray-600">Posted at {created_at}</div>
             </div>
