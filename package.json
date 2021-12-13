@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "babel-preset-next": "^1.4.0",
     "mongodb": "^3.5.9",
     "mongoose": "^6.0.12",
     "nanoid": "^3.1.30",

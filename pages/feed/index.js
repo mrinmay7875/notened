@@ -52,24 +52,7 @@ To create a  new post click here 👉
         </button>
             </div>
 </div>
-        {/* <h4 className="bg-black text-white pl-20">
-                    To post first you have to{' '}
-                    <Link href="/login" passHref={true}>
-                        <a className=" text-red-700 hover:border-b-2 border-fuchsia-600">
-                            Login here
-                        </a>
-                    </Link>
-                </h4> */}
-
-        {/* <h4 className="bg-black text-white pl-20">
-                    To create a new post
-                    <Link href="/newpost" passHref={true}>
-                        <a className=" text-blue-700 hover:border-b-2 border-fuchsia-600">
-                            Click here
-                        </a>
-                    </Link>
-                </h4> */}
-
+     
         <div className="bg-black pt-5 pb-20 text-white ">
           {posts.map((post) => (
             <Post

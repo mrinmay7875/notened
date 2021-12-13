@@ -20,6 +20,7 @@ function Newpost() {
       body: JSON.stringify({
         newPost,
         user: session.user.name,
+        email:session.user.email,
         avatar: session.user.image
           ? session.user.image
           : "https://robohash.org/esseharumomnis.png?size=50x50&set=set1",
