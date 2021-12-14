@@ -15,14 +15,16 @@ function Footer() {
       >
         <div className=" text-center text-white pb-3 ">
 
+         
 
           <div className="text-white pt-0.5 text-sm inline mr-20 absolute left-20">
             <button className="p-1 border-1 rounded-sm mt-1 border-white opacity-60 hover:bg-white hover:text-black ">
-              <a href="https://github.com/mrinmay7875/next-mongodb-app" target="_blank" rel="noopener noreferrer">GitHub</a>
-             
+              <a  href="https://github.com/mrinmay7875/next-mongodb-app/tree/development" target="_blank" rel="noopener noreferrer" >Github</a>
+  
             </button>
           </div>
 
+          
           <Link passHref={true} href="/">
             <a className="hover:opacity-90 opacity-50 inline  font-semibold text-base ">
               Home
