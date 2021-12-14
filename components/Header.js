@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/client";
-import {server} from "../config/index"
+import { server } from "../config/index";
 
 function Header() {
   const [session, loading] = useSession();
