@@ -24,7 +24,7 @@ export default function Home() {
 
       <main>
         <Header />
-        <div className="flex flex-col justify-center items-center text-white bg-black h-full py-10">
+        <div className="flex flex-col justify-center items-center text-white bg-black h-full py-10 min-h-screen">
           <h1 className="text-8xl font-bold ">Next.js</h1>
           <h1 className="text-8xl font-bold">Mongodb</h1>
           <h1
