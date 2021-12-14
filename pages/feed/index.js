@@ -3,7 +3,6 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Post from "../../components/PostComponent";
 import Link from "next/link";
-// import posts from '../../data/posts.json';
 import { server } from "../../config/index";
 import { useSession, signIn } from "next-auth/client";
 
@@ -39,9 +38,9 @@ function index({ posts }) {
   if (posts) {
     // console.log(posts);
     return (
-      <div>
+      <div className=" bg-black min-h-screen">
         <Header />
-<div className="bg-black">
+<div >
 
 
         <h2 className="bg-black text-white text-3xl text-center py-5 ">
