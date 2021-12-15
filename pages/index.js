@@ -25,15 +25,9 @@ export default function Home() {
       <main>
         <Header />
         <div className="flex flex-col justify-center items-center text-white bg-black h-full py-10 min-h-screen">
-          <h1 className="text-8xl font-bold ">Next.js</h1>
-          <h1 className="text-8xl font-bold">Mongodb</h1>
-          <h1
-            className="
-                        text-8xl
-                        font-bold"
-          >
-            App
-          </h1>
+          <h1 className="text-5xl font-bold ">Notened</h1>
+          <h6 className="text-xl font-bold mx-40 my-5 px-20 py-5 text-center opacity-80">Simple Note taking App where you can store your notes or todo lists. To create a new note you must be logged in</h6>
+       
           {loading  && <BeatLoader  size={30} color={"#123abc"} css={override} loading={loading} />}
           {!loading && session  && <div>
               <h2 className="text-4xl mt-10">You are logged in as {session.user.name} </h2>
