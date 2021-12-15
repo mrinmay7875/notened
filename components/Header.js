@@ -15,7 +15,7 @@ function Header() {
       </Head>
       <header className="flex flex-row flex-wrap justify-around items-center bg-gray-900 ">
         <Link href="/">
-          <a className="text-2xl font-bold text-white ">Home</a>
+          <a className="text-2xl font-bold text-white ">Notened</a>
         </Link>
 
         <div className="flex flex-row flex-wrap justify-evenly items-center bg-gray-900 my-3  ">
