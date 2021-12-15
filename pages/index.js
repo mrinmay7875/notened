@@ -2,9 +2,12 @@ import Link from "next/link";
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { useSession } from "next-auth/client";
+// import { useSession } from "next-auth/client";
 import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
+import { useSession, signIn,getSession } from "next-auth/client";
+
+
 
 const override = css`
   display: block;
@@ -12,8 +15,21 @@ const override = css`
   border-color: red;
 `;
 
+
+
+
 export default function Home() {
   const [session, loading] = useSession();
+
+function handleShowFeeds(){
+  if (session) {
+    window.location.href = "/feed";
+  } else {
+    signIn();
+  }
+}
+
+
   return (
     <div>
       <Head>
@@ -41,11 +57,10 @@ export default function Home() {
           {!loading && !session && <h2 className="text-4xl mt-10">You are not logged in!</h2>}
 
 
-          <Link href="/feed" passHref={true}>
-            <button className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 my-20 ">
-              Go to Feed
+          
+            <button onClick={handleShowFeeds} className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 my-20 ">
+              View your notes 
             </button>
-          </Link>
         </div>
 
         <Footer />

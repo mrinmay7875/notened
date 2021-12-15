@@ -4,7 +4,7 @@ import Link from 'next/link';
 function Post({ id, username, content, avatar,created_at }) {
     return (
         <Link href={`/feed/posts/${id}`} passHref={true}>
-            <div className="rounded border-1 border-gray-500 bg-black text-white mx-20 mb-10 lg:mx-30 p-4 hover:bg-gray-900 cursor-pointer ">
+            <div className="rounded border-1 border-gray-500 bg-black text-white mx-10 mb-10 lg:mx-30 p-4 hover:bg-gray-900 cursor-pointer ">
                 <div>
                     <span className="mt-20 ml-2">
                         <Image
