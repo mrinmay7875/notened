@@ -22,11 +22,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
       <main>
         <Header />
         <div className="flex flex-col justify-center items-center text-white bg-black h-full py-10 min-h-screen">
-          <h1 className="text-5xl font-bold ">Notened</h1>
-          <h6 className="text-xl font-bold mx-40 my-5 px-20 py-5 text-center opacity-80">Simple Note taking App where you can store your notes or todo lists. To create a new note you must be logged in</h6>
+ 
+ <h1 className="text-4xl font-bold ">Notened</h1>
+          <h6 className="text-xl font-bold mx-40 my-5 px-20 py-5 text-center">Simple Note taking App where you can store your notes or todo lists. To create a new note you must be logged in</h6>
        
           {loading  && <BeatLoader  size={30} color={"#123abc"} css={override} loading={loading} />}
           {!loading && session  && <div>
