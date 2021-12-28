@@ -48,7 +48,7 @@ function handleShowFeeds(){
        
           {loading  && <BeatLoader  size={30} color={"#123abc"} css={override} loading={loading} />}
           {!loading && session  && <div>
-              <h2 className="text-4xl mt-10">You are logged in as {session.user.name} </h2>
+              <h2 className="text-4xl mt-10">You are logged in as <h2 className="text-4xl lg:text-4xl text-center lg:inline">{session.user.name}</h2> </h2>
               
 
               </div>

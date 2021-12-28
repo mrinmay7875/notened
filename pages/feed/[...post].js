@@ -36,7 +36,7 @@ function Post(props) {
                     <h1 className="text-center text-2xl text-white py-10">
                         Here is your post 
                     </h1>
-                    <div className="rounded border-2 border-gray-100 bg-black text-white mx-20 mb-10 lg:mx-10 p-4 ">
+                    <div className="rounded border-2 border-gray-100 bg-black text-white mx-10 mb-10 lg:mx-10 p-4 ">
                         <div>
                             <span className="mt-20 ml-2">
                                 <Image
