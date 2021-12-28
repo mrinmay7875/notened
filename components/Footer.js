@@ -17,7 +17,7 @@ function Footer() {
 
          
 
-          <div className="text-white pt-0.5 text-sm inline mr-20 absolute left-20">
+          <div className="text-white pt-0.5 text-sm inline mr-20 absolute left-10 md:left-20">
             <button className="p-1 border-1 rounded-sm mt-1 border-white opacity-60 hover:bg-white hover:text-black ">
               <a  href="https://github.com/mrinmay7875/next-mongodb-app/tree/development" target="_blank" rel="noopener noreferrer" >Github</a>
   

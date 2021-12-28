@@ -41,10 +41,10 @@ function handleShowFeeds(){
 
       <main>
         <Header />
-        <div className="flex flex-col justify-center items-center text-white bg-black h-full py-10 min-h-screen">
+        <div className="flex flex-col justify-center items-center text-white bg-black h-full py-10 min-h-screen relative">
  
- <h1 className="text-4xl font-bold ">Notened</h1>
-          <h6 className="text-xl font-bold mx-40 my-5 px-20 py-5 text-center">Simple Note taking App where you can store your notes or todo lists. To create a new note you must be logged in</h6>
+ <h1 className="text-4xl font-bold md:absolute top-40 md:text-5xl lg:top-12">Notened</h1>
+          <h6 className="text-2xl opacity-70 font-bold mx-0 my-5 px-10 py-5 text-center md:mt-0 lg:mx-40 lg:mt-10">Simple Note taking App where you can store your notes or todo lists. To create a new note you must be logged in</h6>
        
           {loading  && <BeatLoader  size={30} color={"#123abc"} css={override} loading={loading} />}
           {!loading && session  && <div>
@@ -54,11 +54,11 @@ function handleShowFeeds(){
               </div>
               }
 
-          {!loading && !session && <h2 className="text-4xl mt-10">You are not logged in!</h2>}
+          {!loading && !session && <h2 className="text-3xl lg:text-4xl mt-10">You are not logged in!</h2>}
 
 
           
-            <button onClick={handleShowFeeds} className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ml-10 my-20 ">
+            <button onClick={handleShowFeeds} className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded  mx-12 my-20 ">
               View your notes 
             </button>
         </div>
