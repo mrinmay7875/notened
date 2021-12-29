@@ -28,10 +28,6 @@ export async function getServerSideProps(context) {
     };
 }
 
-// function deletePost(post_id){
-//     alert(post_id)
-// }
-
 
 async function deletePost(post_id) {
   let text = "Are you sure you want to delete this post?";
@@ -45,14 +41,14 @@ async function deletePost(post_id) {
       },
       body: JSON.stringify({
         post_id: post_id,
-        mysecret: process.env.MYSECRET
       }),
     });
+let res=await response.json();
 
-    let { error, res } = await response.json();
-
-    if (!error) {
+    if (res.data.deletedCount > 0) {
      alert("The post was deleted successfully!")
+    window.location.href = "/feed";
+
     } else {
       alert("There was an error deleting the post!")
     }
