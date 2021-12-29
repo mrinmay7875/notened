@@ -28,38 +28,38 @@ export async function getServerSideProps(context) {
     };
 }
 
-function deletePost(post_id){
-    alert(post_id)
-}
-
-
-// async function deletePost(post_id) {
-//   let text = "Are you sure you want to delete this post?";
-//   if (confirm(text) == true) {
-//     // console.log("Yes delete this post");
-
-//     let response = await fetch(`${server}api/deletepostbyid`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         post_id: post_id,
-//         mysecret: process.env.MYSECRET
-//       }),
-//     });
-
-//     let { error, res } = await response.json();
-
-//     if (!error) {
-//      alert("The post was deleted successfully!")
-//     } else {
-//       alert("There was an error deleting the post!")
-//     }
-//   } else {
-//     // console.log("No please dont delete this post")  }
-//   }
+// function deletePost(post_id){
+//     alert(post_id)
 // }
+
+
+async function deletePost(post_id) {
+  let text = "Are you sure you want to delete this post?";
+  if (confirm(text) == true) {
+    // console.log("Yes delete this post");
+
+    let response = await fetch(`${server}api/deletepostbyid`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        post_id: post_id,
+        mysecret: process.env.MYSECRET
+      }),
+    });
+
+    let { error, res } = await response.json();
+
+    if (!error) {
+     alert("The post was deleted successfully!")
+    } else {
+      alert("There was an error deleting the post!")
+    }
+  } else {
+    // console.log("No please dont delete this post")  }
+  }
+}
 
 
 
