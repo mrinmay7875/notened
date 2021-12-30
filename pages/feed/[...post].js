@@ -76,7 +76,7 @@ function Post(props) {
                                 />
                             </span>
                             <span className=" px-2 opacity-80">
-                                debapriya venkesteswar anusha
+                                {username}
                             </span>
                         </div>
                         <p className="text-xl px-2.5 py-5 "> {content}</p>
