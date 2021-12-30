@@ -3,9 +3,8 @@ import Header from '../../components/Header';
 import { server } from '../../config/index';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export async function getServerSideProps(context) {
     const post_id = context.query.post[1];
@@ -28,39 +27,34 @@ export async function getServerSideProps(context) {
     };
 }
 
-
 async function deletePost(post_id) {
-  let text = "Are you sure you want to delete this post?";
-  if (confirm(text) == true) {
-    // console.log("Yes delete this post");
+    let text = 'Are you sure you want to delete this post?';
+    if (confirm(text) == true) {
+        // We will delete the post
+        let response = await fetch(`${server}api/deletepostbyid`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                post_id: post_id
+            })
+        });
+        let res = await response.json();
 
-    let response = await fetch(`${server}api/deletepostbyid`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        post_id: post_id,
-      }),
-    });
-let res=await response.json();
-
-    if (res.data.deletedCount > 0) {
-     alert("The post was deleted successfully!")
-    window.location.href = "/feed";
-
+        if (res.data.deletedCount > 0) {
+            alert('The post was deleted successfully!');
+            window.location.href = '/feed';
+        } else {
+            alert('There was an error deleting the post!');
+        }
     } else {
-      alert("There was an error deleting the post!")
+        // console.log("No please dont delete this post")  }
     }
-  } else {
-    // console.log("No please dont delete this post")  }
-  }
 }
 
-
-
 function Post(props) {
-    const { username, content, avatar,created_at,post_id } = props.post;
+    const { username, content, avatar, created_at, post_id } = props.post;
     if (props.post) {
         return (
             <>
@@ -68,7 +62,7 @@ function Post(props) {
 
                 <div className="flex flex-col items-center justify-ceneter bg-black h-screen">
                     <h1 className="text-center text-2xl text-white py-10">
-                        Here is your post 
+                        Here is your post
                     </h1>
                     <div className="rounded border-2 border-gray-100 bg-black text-white mx-20 mb-10 lg:mx-10 p-4 ">
                         <div>
@@ -84,24 +78,32 @@ function Post(props) {
                             <span className="relative bottom-6 ml-2">
                                 {username}
                             </span>
-                            </div>
+                        </div>
                         <p className="px-2.5 py-3"> {content}</p>
 
-                        <div className="ml-5 text-gray-600">                <div className="ml-5 text-gray-600">Posted at {new Date(created_at).toLocaleString()}</div>
-</div>
+                        <div className="ml-5 text-gray-600">
+                            {' '}
+                            <div className="ml-5 text-gray-600">
+                                Posted at{' '}
+                                {new Date(created_at).toLocaleString()}
+                            </div>
+                        </div>
                     </div>
 
                     <div className="relative">
-                            <Link href="/feed" passHref={true}>
-                                    <span className="text-xl text-white underline mt-15 cursor-pointer text-center">
-                                        Back to Feed
-                                    </span>
-                                    </Link>
+                        <Link href="/feed" passHref={true}>
+                            <span className="text-xl text-white underline mt-15 cursor-pointer text-center">
+                                Back to Feed
+                            </span>
+                        </Link>
 
-<button onClick={() => deletePost(post_id)}  className=" block absolute top-48 lg:top-32 bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded opacity-50 hover:opacity-80 ">Delete Post</button>
-
+                        <button
+                            onClick={() => deletePost(post_id)}
+                            className=" block absolute top-48 lg:top-32 bg-transparent hover:bg-red-700 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded opacity-50 hover:opacity-80 "
+                        >
+                            Delete Post
+                        </button>
                     </div>
-
                 </div>
                 <Footer />
             </>
@@ -123,4 +125,3 @@ function Post(props) {
 }
 
 export default Post;
-

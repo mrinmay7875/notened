@@ -19,14 +19,11 @@ export async function getServerSideProps(context) {
     const data = await res.json();
 
     return {
-        props: {
-           
-        }
+        props: {}
     };
 }
 
 function Post({ username, content }) {
-
     return (
         <>
             <div>The username is {username}</div>
