@@ -64,9 +64,9 @@ function Post(props) {
                     <h1 className="text-center text-2xl text-white py-10">
                         Here is your post
                     </h1>
-                    <div className="rounded border-2 border-gray-100 bg-black text-white mx-20 mb-10 lg:mx-10 p-4 ">
-                        <div>
-                            <span className="mt-20 ml-2">
+                    <div className="rounded border-2 border-gray-600 bg-black text-white mx-5  mb-10 lg:mx-10 p-4 ">
+                        <div className="flex flex-row flex-nowrap">
+                            <span className=" ml-2">
                                 <Image
                                     src={avatar}
                                     alt="avatar"
@@ -75,15 +75,15 @@ function Post(props) {
                                     className="mt-20"
                                 />
                             </span>
-                            <span className="relative bottom-6 ml-2">
-                                {username}
+                            <span className=" px-2 opacity-80">
+                                debapriya venkesteswar anusha
                             </span>
                         </div>
-                        <p className="px-2.5 py-3"> {content}</p>
+                        <p className="text-xl px-2.5 py-5 "> {content}</p>
 
-                        <div className="ml-5 text-gray-600">
+                        <div className=" ml-5 text-gray-600">
                             {' '}
-                            <div className="ml-5 text-gray-600">
+                            <div className="  mt-5 text-gray-600">
                                 Posted at{' '}
                                 {new Date(created_at).toLocaleString()}
                             </div>
