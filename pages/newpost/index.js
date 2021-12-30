@@ -44,16 +44,16 @@ function Newpost() {
     return (
         <div>
             <Header />
-            <h3 className="bg-black text-white text-center py-10 text-2xl ">
+            <h3 className="bg-black text-white text-center py-10 text-2xl px-10 ">
                 Write your post here and click on the button to publish it
             </h3>
             <div className=" flex flex-col items-center justify-ceneter pb-20 bg-black">
                 <div className=" mt-5 pt-0 mx-80">
                     <textarea
                         id="newpost_field"
-                        className="resize border rounded-md"
+                        className="resize border-2-red rounded-md "
                         rows="8"
-                        cols="40"
+                        cols="30"
                     ></textarea>
                 </div>
                 <div>
